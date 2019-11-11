@@ -10,8 +10,6 @@ namespace WorkWithDB.AdoNet
 {
     public class Program
     {
-        static int x { get; set; }
-
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
