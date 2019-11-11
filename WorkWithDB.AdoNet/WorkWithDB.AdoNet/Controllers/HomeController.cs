@@ -5,13 +5,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WorkWithDB.AdoNet.Models;
+using WorkWithDB.AdoNet;
+using Microsoft.Extensions.Configuration;
+using ADO.NET.WorkWithDB;
 
 namespace WorkWithDB.AdoNet.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult GithubProfileModel()
+        public IActionResult GithubProfileModel(IConfiguration config)
         {
+            List<GithubProfileModel> modelList;
+            DBConnection connection = new DBConnection(config.GetConnectionString("DefaultConnectionString"));
+            connection.GetInfoFromDB(out modelList);
+
             return View();
         }
 

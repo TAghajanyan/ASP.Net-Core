@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
@@ -12,6 +10,8 @@ namespace WorkWithDB.AdoNet
 {
     public class Program
     {
+        static int x { get; set; }
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
