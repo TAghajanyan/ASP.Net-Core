@@ -1,0 +1,13 @@
+﻿<html>
+<head>
+	<title>@ViewData["company"]</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+</head>
+<body>
+	@foreach (var item in ViewData)
+	{
+		<p>@item.Key -- @item.Value</p>
+	}
+</body>
+</html>
