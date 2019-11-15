@@ -1,0 +1,15 @@
+﻿@using  _003_Model.Models
+@model List<CarModel>
+
+<html>
+<head>
+	<title>All Cars data</title>
+</head>
+<body>
+	<h2>AllCars</h2>
+	@foreach (var item in Model)
+	{
+		<p>Model: @item.Model, Price: @item.Price</p>
+	}
+</body>
+</html>

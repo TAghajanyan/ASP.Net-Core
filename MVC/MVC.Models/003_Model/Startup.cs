@@ -9,8 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-namespace _002_ModelToView
+namespace _003_Model
 {
     public class Startup
     {
@@ -31,12 +32,12 @@ namespace _002_ModelToView
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddLogging();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILogger logger)
         {
             if (env.IsDevelopment())
             {
@@ -55,8 +56,8 @@ namespace _002_ModelToView
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "xx",
-                    template: "{controller=home}/{action=index}/{id?}");
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
