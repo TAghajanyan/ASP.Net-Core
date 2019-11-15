@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+	<title>Razor</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<p>Data: @DateTime.Now.ToLongDateString()</p>
+
+	@{
+		string fName = "John";
+		string lName = "Smith";
+		int age = 20;
+	}
+	@if (age >= 18)
+	{
+		<p>@fName @lName is @age years old!</p>
+	}
+
+	@{
+		var list = Context.Request.Path.Value.Split("/").ToList();
+	}
+
+	@foreach (var item in list)
+	{
+		<a>@item</a>
+	}
+
+	@functions
+	{
+	public int Fac(int n)
+	{
+		int res = 1;
+		for (int i = 1; i <= n; i++)
+		{
+			res *= i;
+		}
+		return res;
+	}
+	}
+	@{
+		string value = Context.Request.Path.Value.Split("/").TakeLast(1).ToList()[0];
+		int param;
+		if (int.TryParse(value, out param))
+		{
+			<p>Factoirial of  number @param is: @Fac(param)</p>
+		}
+	}
+
+</body>
+</html>
