@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET.WorkWithDB
 {
-    class GithubProfileModel
+    public class GithubProfileModel
     {
         public int Id { get; set; }
         public string UserName { get; set; }

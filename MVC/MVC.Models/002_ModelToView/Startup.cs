@@ -56,7 +56,7 @@ namespace _002_ModelToView
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=index}/{action=home}/{id?}");
+                    template: "{controller=home}/{action=index}/{id?}");
             });
         }
     }

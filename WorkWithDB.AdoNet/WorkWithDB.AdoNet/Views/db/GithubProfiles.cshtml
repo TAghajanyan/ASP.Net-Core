@@ -1,0 +1,14 @@
+﻿@using ADO.NET.WorkWithDB
+@model List<GithubProfileModel>
+
+<html>
+<head>
+	<title>GithubProfiles</title>
+</head>
+<body>
+	@foreach (var item in Model)
+	{
+		<p>Id[@item.Id] | UserName[@item.UserName] | Url[@item.Url] | Company[@item.Company] | Name[@item.Name] | Bio[@item.Bio] | Location[@item.Location] | Email[@item.Email] | BlogOrWebsite[@item.BlogOrWebsite] | StarsCount[@item.StarsCount] | ImageUrl[@item.ImageUrl] | LastUpdate[@item.LastUpdate]</p>
+	}
+</body>
+</html>
