@@ -1,0 +1,21 @@
+﻿@using SetDataToDB.Models
+@model List<User>
+
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	@if (Model is null)
+	{
+		<h3>There are not ifers!!!</h3>
+	}
+	else
+	{
+		foreach (var item in Model)
+		{
+			<p>@item.Id | @item.FName | @item.LName | @item.Age</p>
+		}
+	}
+</body>
+</html>
